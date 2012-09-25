@@ -225,6 +225,12 @@ nnoremap <silent> <A-r> :CtrlPMRU<CR>
 inoremap <silent> <A-r> <C-O>:CtrlPMRU<CR>
 vnoremap <silent> <A-r> <C-C>:CtrlPMRU<CR>
 
+"configure the tagbar plugin 
+let g:tarbar_singleclick = 1
+nnoremap <silent> <f9> :TagbarToggle<CR>
+inoremap <silent> <f9> <C-O>:TagbarToggle<CR>
+vnoremap <silent> <f9> <C-C>:TagbarToggle<CR>
+
 "Set Alt-D as showing all opened buffers
 nnoremap <silent> <A-d> :CtrlPBuffer<CR>
 inoremap <silent> <A-d> <C-O>:CtrlPBuffer<CR>
