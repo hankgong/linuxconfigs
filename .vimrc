@@ -4,6 +4,39 @@
 call pathogen#infect()
 set hidden
 
+" autosave on losing focus
+au FocusLost * :wa
+
+"file handling
+filetype on
+filetype plugin on
+syntax on
+syntax enable
+
+"Font setting
+set gfn=Monospace\ 9
+"autocmd BufEnter * :syntax sync fromstart
+
+set nocompatible
+set nu
+set autoread		"autoload the file when modified
+set nobackup	
+set wildmenu		"add autocomplete in the cmd mode
+
+"you can use mouse at any place
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+
+"setting about searching
+"set showmatch		"highlight the matching parenthesis
+set matchtime=5		"parenthesis matching time about 1/10 second
+set ignorecase		"ignore up/low case when searching
+set smartcase
+set showmatch
+set incsearch		"highlight incrementally when searching
+set ruler			"show the ruler at the right botton corner
+set hlsearch		"highlight the search results
 "lists of all installed packages
 "--ack.vim: ack-grep, a powerful searching tool to replace grep. 
 "|---F3 is bound to search with ack-grep
@@ -13,7 +46,6 @@ set hidden
 "--c.vim: main c plugin for c programming
 "
 
-
 "For now, I'm just using the 
 "colorscheme ir_black
 "colorscheme molokai
@@ -21,10 +53,11 @@ set hidden
 
 "color customized settings
 hi PmenuSel ctermbg=darkcyan
-" with highlight current line in different modes
+" with highlight current line if the line is too long
 highlight OverLength ctermbg=darkblue ctermfg=white guibg=#592929
 match OverLength /\%101v.\+/
 
+"cursor line color settings
 hi CursorLine   cterm=NONE ctermbg=black  guibg=darkred guifg=white
 hi CursorColumn cterm=NONE ctermbg=black  guibg=darkred guifg=white
 
@@ -33,7 +66,7 @@ autocmd InsertEnter * set cul
 autocmd InsertLeave * set cul!
 
 
-"supertab settisfds; wondering why the default key mapping is reversed
+"supertab settings; wondering why the default key mapping is reversed
 "let g:SuperTabMappingForward = '<s-tab>'
 "let g:SuperTabMappingBackward = '<tab>'
 "let g:SuperTabMappingLiteral = '<c-t>'
@@ -47,9 +80,6 @@ let g:ctrlp_show_hidden = 1
 let g:acp_behaviorKeywordLength = 4
 "let g:acp_completeoptPreview = 1
 
-"Font setting
-set gfn=Monospace\ 9
-"autocmd BufEnter * :syntax sync fromstart
 
 "Ctags configuration
 set tags=tags;
@@ -130,35 +160,7 @@ nnoremap ; :
 inoremap jj <ESC>
 cnoremap jj <ESC>
 
-" autosave on losing focus
-"au FocusLost * :wa
 
-"file handling
-filetype on
-filetype plugin on
-syntax on
-syntax enable
-
-set nocompatible
-set nu
-set autoread		"autoload the file when modified
-set nobackup	
-set wildmenu		"add autocomplete in the cmd mode
-
-"you can use mouse at any place
-set mouse=a
-set selection=exclusive
-set selectmode=mouse,key
-
-"setting about searching
-"set showmatch		"highlight the matching parenthesis
-set matchtime=5		"parenthesis matching time about 1/10 second
-set ignorecase		"ignore up/low case when searching
-set smartcase
-set showmatch
-set incsearch		"highlight incrementally when searching
-set ruler			"show the ruler at the right botton corner
-set hlsearch		"highlight the search results
 nnoremap <leader><space> :noh<CR>
 
 
@@ -263,9 +265,7 @@ nnoremap <silent> <f4> :cclose<CR>
 inoremap <silent> <f4> <C-O>:cclose<CR>
 vnoremap <silent> <f4> <C-C>:cclose<CR>
 
-autocmd! bufwritepost .vimrc source %
-
-
+"autocmd! bufwritepost .vimrc source %
 
 "Error handling
 nnoremap <silent> <A-u> :cn<CR>
