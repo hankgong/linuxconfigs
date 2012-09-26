@@ -80,6 +80,9 @@ fi
 # disable the terminal flow control command to make vim accept C-S and C-Q
 stty -ixon -ixoff
 
+# let other guys in my group write my file
+umask 0002
+
 # some more ls aliases
 alias ll='ls -lhF'
 alias la='ls -A'
@@ -99,10 +102,15 @@ export PATH=$PATH:/home/hgong/Programs/exec:/opt/freescale/usr/local/gcc-4.4.4-g
 
 #alias for go to ltib linux folders
 alias ggg='cd /home/hgong/freescale/ltib/'
+alias gng='cd /nfsshare/freescale/ltib/'
 alias ggl='cd /home/hgong/freescale/ltib/rpm/BUILD/linux-2.6.35.3/'
+alias gnl='cd /nfsshare/freescale/ltib/rpm/BUILD/linux-2.6.35.3/'
 alias ggu='cd /home/hgong/freescale/ltib/rpm/BUILD/u-boot-2009.08/'
+alias gnu='cd /nfsshare/freescale/ltib/rpm/BUILD/u-boot-2009.08/'
 alias ltibb='/home/hgong/freescale/ltib/ltib -m scbuild -p'
+alias lbb='/nfsshare/freescale/ltib/ltib -m scbuild -p'
 alias ltibd='/home/hgong/freescale/ltib/ltib -m scdeploy -p'
+alias lbd='/nfsshare/freescale/ltib/ltib -m scdeploy -p'
 alias lmake='make ARCH=arm CROSS_COMPILE= HOSTCC=ccache /usr/bin/gcc -B/usr/bin/ menuconfig'
 
 
