@@ -33,7 +33,6 @@ set selectmode=mouse,key
 set matchtime=5		"parenthesis matching time about 1/10 second
 set ignorecase		"ignore up/low case when searching
 set smartcase
-set showmatch
 set incsearch		"highlight incrementally when searching
 set ruler			"show the ruler at the right botton corner
 set hlsearch		"highlight the search results
