@@ -114,6 +114,12 @@ noremap i k
 noremap k j
 noremap j h
 noremap h i
+noremap H I
+
+"window switch operation
+nnoremap <A-w> <C-w>
+inoremap <A-w> <C-\><C-O><C-w>
+vnoremap <A-w> <C-w>
 
 " Map alt+ikjl as up/down/left/right for insert and normal mode
 inoremap <silent> <A-i> <UP>
