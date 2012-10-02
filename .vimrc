@@ -288,4 +288,4 @@ inoremap <silent> <A-y> <C-O>:cp<CR>
 let g:ctrlp_open_new_file = 't'
 let g:ctrlp_open_multi = '1t'
 
-
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
